@@ -66,7 +66,7 @@ void Att_ekf::update_magnetic(Vector3d& mag, double t)
 		curr_t = t;
 		return;
 	}
-	if(t < curr_t) 
+	if(t < curr_t) // dt < 0 인 상황! 여기서는 return으로 끝냈지만, 우리는 backpropagation 진행
 	{
 		cout << "t is smaller than curr_t" << endl;
 		return;
