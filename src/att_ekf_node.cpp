@@ -98,7 +98,7 @@ int main(int argc, char **argv)
 
 		while(imu_q.back().first - imu_q.front().first > 0.05)//buffer size
 		{
-			if(imu_q.front().first < mag_q.front().first)
+			if(imu_q.front().first < mag_q.front().first) // (front.first = measurement time)
 			{
 				Vector3d acc, gyro;
 				acc(0) = imu_q.front().second.linear_acceleration.x;
